@@ -1,0 +1,21 @@
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("What is Bitcoin price today?");
+        String bitcoinPrice = bufferedReader.readLine();
+
+        System.out.println("How much $ do you have?");
+        String moneyAvailable = bufferedReader.readLine();
+
+        int moneyAvailableInt = Integer.parseInt(moneyAvailable);
+        double bitcoinPriceFloat = Float.parseFloat(bitcoinPrice);
+        float convertToBitcoin = (float) (moneyAvailableInt / bitcoinPriceFloat);
+
+        String result = String.format("%.7f",convertToBitcoin);
+
+        System.out.println("You can buy " + result + " BTC");
+    }
+}
